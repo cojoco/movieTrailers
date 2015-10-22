@@ -18,7 +18,7 @@ div, ul {
 }
 
 .no-movies {
-  background-color: #ED5565;
+  background-color: white;
 }
 
 .center {
@@ -45,6 +45,30 @@ div, ul {
 .list {
   text-align: center;
   list-style: none;
-  background-color: #4FC1E9;
-  color: white;
+  background-color: white;
+  color: black;
+}
+body{
+  background-color: white;
+}
+#header{
+  background-color:gray;
+
+}
+.description{
+    text-align: center;
+    width: 640px;
+}
+.movname{
+    text-align: center;
+    width: 640px;
+}
+
+.money {
+  text-align: center;
+  width: 640px;
+}
+
+.movie {
+  min-height: 600px;
 }

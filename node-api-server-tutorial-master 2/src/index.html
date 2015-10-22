@@ -4,24 +4,37 @@
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.0/angular.min.js"></script>
 <script src="./app.js"></script>
 <link rel="stylesheet" type="text/css" href="./style.css">
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
   <meta charset="utf-8">
-  <title>Top Ten Highest Grossing Movies</title>
+  <title>Top 10 Highest Grossing Movies</title>
 </head>
 <body>
 
   <div id='app' ng-app='app' ng-controller='mainCtrl'>
+    <div class="panel panel-default">
+      <div id = "header">
+        <div class="panel-body">
+          <h1>Top 10 Highest Grossing Movies</h1>
+        </div>
+      </div>
+    </div>
 
     <div ng-if='!movies.length' class='no-movies center stretch'>
       <h1 class='h1'>
-        Set up your endpoint at `/movies` to get this view working
+        .
       </h1>
     </div>
 
     <ul ng-if='movies.length' class='list center stretch'>
       <li ng-repeat='m in movies' class='movie'>
-        <h1>{{ m.name }}</h1>
-        <h3>{{ m.money }}</h3>
-        <iframe width="640" height="360" src="{{m.trailerUrl}}" frameborder="0" allowfullscreen></iframe>
+        <div class="col-md-5">
+          <h2 class="movname"><strong>{{ m.name }}</strong></h2>
+          <h3 class="money"> Grossed: {{ m.money }} </h3>
+          <iframe width="640" height="360" src="{{m.trailerUrl}}" frameborder="0" allowfullscreen></iframe>
+          <div class = description>
+            <h4> <strong>Plot Summary:</strong> {{ m.description }}</h4>
+          </div>
+        </div>
       </li>
     </ul>
 
